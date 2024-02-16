@@ -32,6 +32,10 @@ def contacts_new_post():
    c = Contact(None, request.form['first_name'],
                request.form['last_name'], request.form['phone'],
                request.form['email'])
+   if c.save():
+      return redirect("/contacts")
+   else:
+      return render_template("new.html", contact = c)
 
 if __name__ == "__main__":
     app.run(port = 5001)
