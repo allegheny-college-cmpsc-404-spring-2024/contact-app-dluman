@@ -115,7 +115,7 @@
     "id": 115,
     "first": "Elijah",
     "last": "Liu",
-    "phone": "777-888-9999",
+    "phone": "555-555-5555",
     "email": "elijah.liu@example.com",
     "errors": {}
   },
@@ -213,14 +213,6 @@
     "last": "Nguyen",
     "phone": "777-888-9999",
     "email": "joseph.nguyen@example.com",
-    "errors": {}
-  },
-  {
-    "id": 128,
-    "first": "Mr.",
-    "last": "",
-    "phone": "",
-    "email": "mru@uugle.com",
     "errors": {}
   }
 ]

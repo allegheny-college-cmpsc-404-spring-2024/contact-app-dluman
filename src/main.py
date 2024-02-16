@@ -37,5 +37,25 @@ def contacts_new_post():
    else:
       return render_template("new.html", contact = c)
 
+@app.route("/contacts/<contact_id>", methods = ["GET"])
+def contacts_view_get(contact_id = 0):
+    contact = Contact.find(contact_id)
+    return render_template("show.html", contact=contact)
+
+@app.route("/contacts/<contact_id>/edit", methods = ["GET"])
+def contacts_edit_get(contact_id = 0):
+    contact = Contact.find(contact_id)
+    return render_template("edit.html", contact=contact)
+
+@app.route("/contacts/<contact_id>/edit", methods = ["POST"])
+def contacts_edit_post(contact_id = 0):
+    c = Contact.find(contact_id)
+    c.update(request.form['first_name'], request.form['last_name'],
+             request.form['phone'], request.form['email'])
+    if c.save():
+       return redirect(f"/contacts/{str(contact_id)}")
+    else:
+       return render_template("edit.html", contact=c)
+
 if __name__ == "__main__":
     app.run(port = 5001)
