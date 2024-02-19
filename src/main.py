@@ -8,11 +8,18 @@ app: Flask = Flask(__name__)
 def index():
     return redirect(location = "/contacts")
 
+@app.route("/contacts/<contacts_id>", methods = ["GET"])
+def contacts_view_get(*args, **kwargs):
+    contact = Contact.find(kwargs["contacts_id"])
+    return render_template("show.html", contact=contact)
+
 @app.route("/contacts")
 def contacts():
     search = request.args.get("q") or None
     if search is not None:
         contacts_set = Contact.search(search)
+        if request.headers.get('HX-Trigger') == 'search':
+            return render_template("rows.html", contacts = contacts_set)
     else:
         contacts_set = Contact.all()
     return render_template(
@@ -36,11 +43,6 @@ def contacts_new_post():
       return redirect("/contacts")
    else:
       return render_template("new.html", contact = c)
-
-@app.route("/contacts/<contact_id>", methods = ["GET"])
-def contacts_view_get(contact_id = 0):
-    contact = Contact.find(contact_id)
-    return render_template("show.html", contact=contact)
 
 @app.route("/contacts/<contact_id>/edit", methods = ["GET"])
 def contacts_edit_get(contact_id = 0):
