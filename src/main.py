@@ -15,8 +15,9 @@ def contacts_view_get(*args, **kwargs):
 
 @app.route("/contacts")
 def contacts():
-    search = request.args.get("q") or None
-    if search is not None:
+    search = request.args.get("q")
+    print(search)
+    if search:
         contacts_set = Contact.search(search)
         if request.headers.get('HX-Trigger') == 'search':
             return render_template("rows.html", contacts = contacts_set)
