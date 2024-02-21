@@ -60,5 +60,14 @@ def contacts_edit_post(contact_id = 0):
     else:
        return render_template("edit.html", contact=c)
 
+@app.route("/contacts/<contact_id>", methods = ["DELETE"])
+def contact_delete(contact_id = 0):
+    contact = Contact.find(contact_id)
+    contact.delete()
+    if request.headers.get('HX-Trigger') == 'delete-link':
+        return("/contacts", 303)
+    else:
+        return ""
+
 if __name__ == "__main__":
     app.run(port = 5001)

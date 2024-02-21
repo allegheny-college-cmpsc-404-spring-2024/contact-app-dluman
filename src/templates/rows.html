@@ -7,6 +7,14 @@
         <td>
 		<a href="/contacts/{{ contact.id }}/edit">Edit</a>
 	    	<a href="/contacts/{{ contact.id }}">View</a>
+		<a 
+			
+			href="#" 
+			hx-delete="/contacts/{{ contact.id }}"
+			hx-swap="outerHtml swap:1s"
+			hx-confirm="Are you sure?"
+			hx-target="closest tr">Delete</a>
+	           
 	</td>
 </tr>
 {% endfor %}

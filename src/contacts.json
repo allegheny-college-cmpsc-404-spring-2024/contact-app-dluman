@@ -32,14 +32,6 @@
     "errors": {}
   },
   {
-    "id": 105,
-    "first": "Ethan",
-    "last": "Garcia",
-    "phone": "555-555-5555",
-    "email": "ethan.garcia@example.com",
-    "errors": {}
-  },
-  {
     "id": 106,
     "first": "Olivia",
     "last": "Lopez",
@@ -115,7 +107,7 @@
     "id": 115,
     "first": "Elijah",
     "last": "Liu",
-    "phone": "555-555-5555",
+    "phone": "777-888-9999",
     "email": "elijah.liu@example.com",
     "errors": {}
   },
@@ -125,14 +117,6 @@
     "last": "Nguyen",
     "phone": "123-456-7890",
     "email": "amelia.nguyen@example.com",
-    "errors": {}
-  },
-  {
-    "id": 117,
-    "first": "Lucas",
-    "last": "Garcia",
-    "phone": "555-555-5555",
-    "email": "lucas.garcia@example.com",
     "errors": {}
   },
   {
@@ -149,14 +133,6 @@
     "last": "Wang",
     "phone": "111-222-3333",
     "email": "alexander.wang@example.com",
-    "errors": {}
-  },
-  {
-    "id": 120,
-    "first": "Harper",
-    "last": "Singh",
-    "phone": "444-333-2222",
-    "email": "harper.singh@example.com",
     "errors": {}
   },
   {
